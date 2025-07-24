@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+// import Header from '../components/Header';
+// import Footer from '../components/Footer';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
 import TestimonialSection from '../components/TestimonialSection';
@@ -9,7 +9,7 @@ import WorkingWithSection from '../components/WorkingWithSection';
 const Index = () => {
   return (
     <div className="main-wrapper">
-      <Header />
+      {/* <Header /> */}
       <HeroSection />
       <AboutSection />
       <WorkingWithSection />

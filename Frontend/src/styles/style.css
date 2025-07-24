@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 
 /* Buttons */
 button {
@@ -1019,3 +1021,52 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
 }
+
+
+
+.logout-btn {
+  padding: 0.5rem 1.25rem;
+  border: 1px solid #8c3b3b; /* A subtle, dark red */
+  color: #c7a1a1; /* A muted red text color */
+  background-color: transparent;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 6px; /* Slightly rounded corners */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #8c3b3b; /* Fill with the dark red */
+  color: #ffffff; /* White text on hover */
+  border-color: #a84f4f; /* Slightly brighter border on hover */
+  box-shadow: 0 0 15px rgba(200, 100, 100, 0.2); /* A subtle red glow */
+  transform: translateY(-1px);
+}
+
+/* For mobile menu */
+.logout-btn-mobile {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid #8c3b3b;
+  color: #c7a1a1;
+  background-color: rgba(140, 59, 59, 0.1); /* Slight background tint */
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center on mobile */
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.logout-btn-mobile:hover {
+  background-color: #8c3b3b;
+  color: #ffffff;
+}
+
