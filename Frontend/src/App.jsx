@@ -20,6 +20,7 @@ import Contact from './pages/Contact.jsx';
 import NotFound from './pages/NotFound.jsx';
 import AuthPage from './pages/AuthPage.jsx';
 import HrDashboardPage from './pages/HrDashboardPage.jsx';
+import UserDashboard from './pages/UserDashboard.jsx';
 import SetPasswordPage from './pages/SetPasswordPage.jsx';
 import LandingPage from './pages/LandingPage.jsx';
 
@@ -157,7 +158,8 @@ const AppRoutes = () => {
         <Route path="/services" element={<ProtectedRoute><Services /></ProtectedRoute>} />
         <Route path="/careers" element={<ProtectedRoute><Careers /></ProtectedRoute>} />
         <Route path="/contact" element={<ProtectedRoute><Contact /></ProtectedRoute>} />
-        <Route path="/hr-dashboard" element={<ProtectedRoute adminOnly={true}><HrDashboardPage /></ProtectedRoute>} />
+  <Route path="/hr-dashboard" element={<ProtectedRoute adminOnly={true}><HrDashboardPage /></ProtectedRoute>} />
+  <Route path="/user-dashboard" element={<ProtectedRoute><UserDashboard /></ProtectedRoute>} />
       </Route>
 
       <Route path="*" element={<NotFound />} />

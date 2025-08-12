@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import ScheduleInterviewModal from './ScheduleInterviewModal';
 
 // Dummy applicants data for demonstration
 const applicantsData = {
@@ -76,13 +75,13 @@ const ResumeModal = ({ candidate, onClose }) => (
 
 const JobApplicationsModal = ({ jobTitle, onClose }) => {
   const applicants = applicantsData[jobTitle] || [];
-  const [scheduleFor, setScheduleFor] = useState(null);
+  // const [scheduleFor, setScheduleFor] = useState(null);
   const [resumeFor, setResumeFor] = useState(null);
-  const handleSchedule = (candidate, interview) => {
-    // In a real app, update backend or state here
-    alert(`Interview scheduled for ${candidate.name} on ${interview.date} at ${interview.time} with ${interview.interviewer}`);
-    setScheduleFor(null);
-  };
+  // const handleSchedule = (candidate, interview) => {
+  //   // In a real app, update backend or state here
+  //   alert(`Interview scheduled for ${candidate.name} on ${interview.date} at ${interview.time} with ${interview.interviewer}`);
+  //   setScheduleFor(null);
+  // };
   return (
     <div className="modal-overlay">
       <div className="modal-content">
@@ -104,7 +103,7 @@ const JobApplicationsModal = ({ jobTitle, onClose }) => {
                 <th>Interviewer</th>
                 <th>Interview History</th>
                 <th>Feedback / Notes</th>
-                <th>Schedule</th>
+                {/* <th>Schedule</th> */}
                 <th>Actions</th>
               </tr>
             </thead>
@@ -133,11 +132,11 @@ const JobApplicationsModal = ({ jobTitle, onClose }) => {
                     ) : '-'}
                   </td>
                   <td>{app.feedback || '-'}</td>
-                  <td>
+                  {/* <td>
                     <button className="view-app-btn" onClick={() => setScheduleFor(app)}>
                       Schedule
                     </button>
-                  </td>
+                  </td> */}
                   <td>
                     <button className="view-app-btn" onClick={() => setResumeFor(app)}>
                       View Resume
@@ -148,6 +147,7 @@ const JobApplicationsModal = ({ jobTitle, onClose }) => {
             </tbody>
           </table>
         )}
+        {/*
         {scheduleFor && (
           <ScheduleInterviewModal
             candidate={scheduleFor}
@@ -155,6 +155,7 @@ const JobApplicationsModal = ({ jobTitle, onClose }) => {
             onSchedule={interview => handleSchedule(scheduleFor, interview)}
           />
         )}
+        */}
         {resumeFor && (
           <ResumeModal candidate={resumeFor} onClose={() => setResumeFor(null)} />
         )}

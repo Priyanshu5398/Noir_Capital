@@ -14,6 +14,10 @@
   width: auto;
   margin-bottom: 1.5rem;
 }
+.landing-logo.small {
+  height: 2.2rem;
+  margin-bottom: 1rem;
+}
 
 .landing-title {
   font-size: 2.25rem; /* text-4xl */
@@ -43,6 +47,10 @@
   max-width: 20rem; /* max-w-xs */
   align-items: center;
   justify-content: center;
+}
+.portal-group {
+  gap: 0.8rem;
+  margin-top: 0.5rem;
 }
 
 @media (min-width: 640px) {

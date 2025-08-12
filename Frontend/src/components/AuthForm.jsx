@@ -145,13 +145,17 @@ const AuthForm = ({ onAuthSuccess, userType }) => {
             </div>
           </div>
 
-          <button
-            onClick={handleGoogleLogin}
-            className="w-full flex items-center justify-center gap-3 bg-gray-800 hover:bg-gray-700 text-white font-bold py-2.5 px-4 rounded-lg"
-          >
-            <GoogleIcon />
-            Continue with Google
-          </button>
+
+          <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+            <button
+              onClick={handleGoogleLogin}
+              className="flex items-center justify-center gap-3 bg-gray-800 hover:bg-gray-700 text-white font-bold py-2.5 px-4 rounded-lg"
+              style={{ minWidth: 260 }}
+            >
+              <GoogleIcon />
+              Continue with Google
+            </button>
+          </div>
 
           <p className="text-center text-sm text-gray-500 mt-6">
             {isLogin ? "Don't have an account?" : "Already have an account?"}

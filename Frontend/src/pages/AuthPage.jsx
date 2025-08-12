@@ -16,11 +16,7 @@ const AuthPage = () => {
   const handleAuthSuccess = async (token) => {
     const userData = await login(token);
     if (userData) {
-      if (userData.role === 'admin') {
-        navigate('/hr-dashboard', { replace: true });
-      } else {
-        navigate('/', { replace: true });
-      }
+      navigate('/', { replace: true });
     }
   };
 
@@ -34,8 +30,19 @@ const AuthPage = () => {
         <img
           src={LOGO}
           alt="Noir Capital Logo"
-          className="h-16 w-auto mx-auto mb-4"
+          className="auth-logo"
         />
+        <h2
+          className={
+            userType === 'admin'
+              ? 'admin-heading'
+              : (userType === 'user-plain' ? 'user-login-heading' : 'user-heading')
+          }
+        >
+          {userType === 'admin'
+            ? 'Admin Secure Login'
+            : (userType === 'user-plain' ? 'User Login' : 'User Portal Login')}
+        </h2>
       </div>
       <div className="auth-card">
         <AuthForm onAuthSuccess={handleAuthSuccess} userType={userType} />

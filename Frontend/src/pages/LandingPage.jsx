@@ -13,11 +13,11 @@ const LandingPage = () => {
 
   return (
     <div className="landing-container">
-      <img src={LOGO} alt="Noir Capital Logo" className="landing-logo" />
+  <img src={LOGO} alt="Noir Capital Logo" className="landing-logo small" />
       <h1 className="landing-title">NOIR CAPITAL</h1>
-      <p className="landing-description">Welcome to the Noir Capital secure portal. Please select your access point.</p>
+      <p className="landing-description">Welcome to the Noir Capital secure portal.<br/>Please select your access point.</p>
 
-      <div className="button-group">
+      <div className="button-group portal-group">
         <button onClick={() => handleNavigate('user')} className="user-button">
           User Portal
         </button>

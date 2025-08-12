@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, User } from 'lucide-react';
+import { useAuth } from '../App';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,16 +9,21 @@ const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
+  const { user } = useAuth ? useAuth() : { user: null };
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'Services', path: '/services' },
     { name: 'Careers', path: '/careers' },
     { name: 'Contact Us', path: '/contact' },
-    { name: 'HR Dashboard', path: '/hr-dashboard' },
+    // Only show HR Dashboard for admin users
+    ...(user && user.role === 'admin' ? [{ name: 'HR Dashboard', path: '/hr-dashboard' }] : []),
+    // Only show User Dashboard for non-admin users
+    ...(user && user.role !== 'admin' ? [{ name: 'User Dashboard', path: '/user-dashboard' }] : []),
   ];
 
-  // Simulate login state (replace with real auth)
-  const isLoggedIn = true; // Set to true for demo
+  // Use AuthContext for real login state and logout
+  const { token, logout } = useAuth ? useAuth() : { token: null, logout: () => {} };
+  const isLoggedIn = !!token;
 
   return (
     <header className="header">
@@ -104,7 +110,7 @@ const Header = () => {
                     }}
                     onClick={() => {
                       setProfileMenuOpen(false);
-                      /* add logout logic here */
+                      logout();
                     }}
                   >
                     Logout

@@ -1,3 +1,93 @@
+/* Login form input and label improvements */
+.auth-card input[type="text"],
+.auth-card input[type="email"],
+.auth-card input[type="password"],
+.auth-card input[type="tel"] {
+  width: 100%;
+  padding: 10px 14px;
+  line-height: 1.5;
+  font-size: 1rem;
+  color: #fff;
+  background: #23243a;
+  border: 1.5px solid #444;
+  border-radius: 8px;
+  margin-bottom: 1.1rem;
+  box-sizing: border-box;
+  transition: border 0.2s;
+}
+.auth-card input[type="text"]:focus,
+.auth-card input[type="email"]:focus,
+.auth-card input[type="password"]:focus,
+.auth-card input[type="tel"]:focus {
+  border-color: #facc15;
+  outline: none;
+}
+.auth-card label {
+  display: block;
+  margin-bottom: 0.45rem;
+  font-size: 1rem;
+  color: #d4af37;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+.auth-card input::placeholder {
+  color: #bbbbbb;
+  opacity: 1;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.auth-logo {
+  height: 3.2rem;
+  width: auto;
+  margin: 0 auto 1.2rem auto;
+  filter: drop-shadow(0 2px 8px #d4af3740);
+}
+.admin-heading {
+  font-size: 1.7rem;
+  font-weight: 900;
+  text-align: center;
+  color: #FFC107;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.2rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.7rem;
+  background: rgba(255, 193, 7, 0.08);
+  border: 1.5px solid #FFC107;
+  box-shadow: 0 4px 24px #ffc10733, 0 2px 12px #0002;
+  text-shadow: 0 2px 12px #ffc10755, 0 1px 2px #0008;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.user-heading {
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-align: center;
+  color: #FFC107;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.2rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.7rem;
+  background: rgba(255, 193, 7, 0.08);
+  border: 1.5px solid #FFC107;
+  box-shadow: 0 4px 24px #ffc10733, 0 2px 12px #0002;
+  text-shadow: 0 2px 12px #ffc10755, 0 1px 2px #0008;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.user-login-heading {
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-align: center;
+  color: #fff;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.2rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.7rem;
+  background: rgba(255,255,255,0.07);
+  border: 1.5px solid #fff;
+  box-shadow: 0 4px 24px #fff2, 0 2px 12px #0002;
+  text-shadow: 0 2px 12px #fff8, 0 1px 2px #0008;
+  transition: background 0.2s, box-shadow 0.2s;
+}
 /* AuthPage.css */
 
 .auth-container {
@@ -85,16 +175,18 @@
 
 /* Style for the 'Continue with Google' button */
 .auth-card button:has(svg) {
-  width: 100%;
+  width: 40%;
+  
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem; /* gap-3 */
-  background-color: #1f2937; /* bg-gray-800 */
+  gap: 0.35rem;
+  background-color: #1f2937;
   color: white;
-  font-weight: 700; /* font-bold */
-  padding: 0.625rem 1rem; /* py-2.5 px-4 */
-  border-radius: 0.5rem; /* rounded-lg */
+  font-weight: 500;
+  font-size: 0.88rem;
+  padding: 0.32rem 0.5rem;
+  border-radius: 0.32rem;
 }
 
 .auth-card button:has(svg):hover {
