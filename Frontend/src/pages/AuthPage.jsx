@@ -4,7 +4,7 @@ import { useAuth } from '../App';
 import AuthForm from '../components/AuthForm';
 import LOGO from '../utils/noir.jpg';
 import { FiArrowLeft } from 'react-icons/fi';
-import '../Styles/AuthPage.css';
+import '../styles/AuthPage.css';
 
 const AuthPage = () => {
   const navigate = useNavigate();

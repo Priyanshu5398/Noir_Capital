@@ -3,7 +3,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from '../App';
 import { setPassword } from "../services/authService";
 import { AiOutlineLock, AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import '../Styles/SetPasswordPage.css'; // Make sure this CSS file is created
+import '../styles/SetPasswordPage.css'; // Make sure this CSS file is created
 
 // --- Helper component for Password Strength ---
 const PasswordStrengthMeter = ({ password }) => {

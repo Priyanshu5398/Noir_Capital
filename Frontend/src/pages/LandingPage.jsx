@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import LOGO from '../utils/noir.jpg'
-import '../Styles/LandingPage.css';
+import '../styles/LandingPage.css';
 
 const LandingPage = () => {
   const navigate = useNavigate();
