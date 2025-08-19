@@ -5,7 +5,7 @@ import AuthForm from '../components/AuthForm';
 import LOGO from '../utils/noir.jpg';
 import { FiArrowLeft } from 'react-icons/fi';
 import { FcGoogle } from "react-icons/fc";
-import '../Styles/AuthPage.css';
+import '../styles/AuthPage.css';
 
 const AuthPage = () => {
   const navigate = useNavigate();
