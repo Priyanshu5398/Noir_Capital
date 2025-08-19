@@ -4,6 +4,8 @@ const connectDB = require('./config/db');
 const authRoutes = require('./routes/auth');
 const passport = require("passport");
 const cors = require("cors");
+const applicationRoutes = require("./routes/applicationRoutes");
+const jobRoutes = require("./routes/jobRoutes");
 
 dotenv.config();
 const app = express();
@@ -27,6 +29,10 @@ app.use(passport.initialize());
 
 // Define Routes
 app.use('/api/auth', authRoutes);
+
+app.use("/api/applications", applicationRoutes);
+
+app.use("/api/jobs", jobRoutes);
 
 app.get('/', (req, res) => {
     res.send('API is running...');

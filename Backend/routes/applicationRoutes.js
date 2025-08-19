@@ -1,0 +1,15 @@
+const express = require("express");
+const router = express.Router();
+const { getUserApplications, applyForJob } = require("../controllers/applicationController");
+const { protect } = require("../middleware/authMiddleware"); // use real middleware
+
+// ✅ Use protect middleware to decode JWT and attach user
+router.use(protect);
+
+// GET /api/applications → Get all applications for logged-in user
+router.get("/", getUserApplications);
+
+// POST /api/applications→ Apply for a job
+router.post("/", applyForJob);
+
+module.exports = router;
