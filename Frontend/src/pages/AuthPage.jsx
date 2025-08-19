@@ -4,7 +4,8 @@ import { useAuth } from '../App';
 import AuthForm from '../components/AuthForm';
 import LOGO from '../utils/noir.jpg';
 import { FiArrowLeft } from 'react-icons/fi';
-import '../styles/AuthPage.css';
+import { FcGoogle } from "react-icons/fc";
+import '../Styles/AuthPage.css';
 
 const AuthPage = () => {
   const navigate = useNavigate();
@@ -16,7 +17,11 @@ const AuthPage = () => {
   const handleAuthSuccess = async (token) => {
     const userData = await login(token);
     if (userData) {
-      navigate('/', { replace: true });
+      if (userData.role === 'admin') {
+        navigate('/hr-dashboard', { replace: true });
+      } else {
+        navigate('/', { replace: true });
+      }
     }
   };
 
@@ -30,22 +35,24 @@ const AuthPage = () => {
         <img
           src={LOGO}
           alt="Noir Capital Logo"
-          className="auth-logo"
+          className="logo"
         />
-        <h2
-          className={
-            userType === 'admin'
-              ? 'admin-heading'
-              : (userType === 'user-plain' ? 'user-login-heading' : 'user-heading')
-          }
-        >
-          {userType === 'admin'
-            ? 'Admin Secure Login'
-            : (userType === 'user-plain' ? 'User Login' : 'User Portal Login')}
-        </h2>
       </div>
       <div className="auth-card">
         <AuthForm onAuthSuccess={handleAuthSuccess} userType={userType} />
+
+        <div className="divider">Or</div>
+
+        {/* Google Login Button */}
+        <button className="google-btn">
+          <FcGoogle size={22} />
+          Continue with Google
+        </button>
+
+        <p>
+          Don’t have an account?
+          <button onClick={() => navigate('/signup')}>Sign Up</button>
+        </p>
       </div>
     </div>
   );

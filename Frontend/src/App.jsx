@@ -23,6 +23,8 @@ import HrDashboardPage from './pages/HrDashboardPage.jsx';
 import UserDashboard from './pages/UserDashboard.jsx';
 import SetPasswordPage from './pages/SetPasswordPage.jsx';
 import LandingPage from './pages/LandingPage.jsx';
+import ApplyForm from './pages/ApplyForm.jsx'; 
+
 
 // --- Auth Utilities & Services ---
 import { getToken, setToken, removeToken } from './utils/tokenManager';
@@ -151,6 +153,7 @@ const AppRoutes = () => {
         <Route path="/login" element={token ? <Navigate to="/" /> : <LandingPage />} />
         <Route path="/auth" element={token ? <Navigate to="/" /> : <AuthPage />} />
         <Route path="/set-password" element={<SetPasswordPage />} />
+        <Route path="/apply/:jobTitle" element={<ApplyForm />} />
       </Route>
 
       <Route element={<MainLayout />}>
